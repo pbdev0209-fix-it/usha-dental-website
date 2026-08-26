@@ -346,8 +346,11 @@ async function main() {
   fs.writeFileSync(outPath, html);
   console.log('Wrote blog/' + topic.slug + '.html (' + html.length + ' bytes)');
 
-  // Mark it done so next week moves on, even if this PR sits unmerged for a
-  // while. If the PR is closed without merging, reset status to 'queued'.
+  // Mark this topic published. Note this write lands on the PR branch, not
+  // on main, so main still shows the topic as queued until the PR merges.
+  // The practical effect is that an unmerged draft is re-drafted next week
+  // rather than skipped, which is the behaviour we want: the schedule should
+  // not run ahead of review.
   topic.status = 'published';
   topic.generatedAt = new Date().toISOString();
   topic.generatedBy = mode;
