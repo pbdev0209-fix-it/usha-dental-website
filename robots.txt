@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pbdev0209-fix-it.github.io/usha-dental-website/sitemap.xml
