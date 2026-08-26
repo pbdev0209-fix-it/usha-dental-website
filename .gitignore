@@ -1,0 +1,12 @@
+# Scratch directory the weekly blog agent uses to pass the PR body
+# from the generator script to the workflow. Never committed.
+.agent/
+
+# Node, in case anyone runs npm here later.
+node_modules/
+npm-debug.log*
+
+# Editor and OS noise.
+.DS_Store
+.vscode/
+.idea/
