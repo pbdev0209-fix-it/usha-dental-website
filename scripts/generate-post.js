@@ -32,7 +32,7 @@
 const fs = require('fs');
 const path = require('path');
 const { article } = require('./lib/template');
-const { rebuildIndexes } = require('./update-indexes');
+const { rebuildIndexes, readPosts } = require('./update-indexes');
 
 const ROOT = path.resolve(__dirname, '..');
 const QUEUE_PATH = path.join(ROOT, 'content', 'queue.json');
@@ -317,7 +317,21 @@ async function main() {
   d.img = topic.img;
   d.alt = topic.alt;
   d.keywords = topic.keyword + ', dentist Overland Park, Dr. Usha Sribollineni';
-  d.related = siblings.filter(function (s) { return s !== topic.slug; }).slice(-3);
+  // Related posts are the three most recently published, not the three
+  // that happen to sort last alphabetically.
+  const known = readPosts();
+  d.related = known
+    .filter(function (p) { return p.slug !== topic.slug; })
+    .slice(0, 3)
+    .map(function (p) { return p.slug; });
+
+  // The template renders a full card per related post, so it needs each
+  // one title, image, category and date. Keys are short because this
+  // index was originally kept in browser storage.
+  d.relatedIndex = {};
+  known.forEach(function (p) {
+    d.relatedIndex[p.slug] = { t: p.title, a: p.alt, c: p.category, d: p.dateLabel, i: p.img };
+  });
 
   const issues = SCAFFOLD ? ['NOTE: scaffold mode, prose is placeholder text.'] : validate(d, siblings);
   const blockers = issues.filter(function (i) { return i.indexOf('BLOCKER') === 0; });
