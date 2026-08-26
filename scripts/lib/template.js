@@ -27,7 +27,14 @@ function T(d) {
   const U = "https://images.unsplash.com/";
   const q = (w) => "?auto=format&amp;fit=crop&amp;w=" + w + "&amp;q=72";
   const base = "https://pbdev0209-fix-it.github.io/usha-dental-website/";
-  const idx = JSON.parse(localStorage.getItem("postIndex"));
+  // Metadata for the related-post cards at the foot of the article.
+  // Node passes this in as d.relatedIndex. The original browser-side build
+  // kept it in localStorage, so that path is retained for backwards
+  // compatibility. Falling back to an empty map means a missing index
+  // degrades to a plain link rather than throwing.
+  const idx = d.relatedIndex ||
+    ((typeof localStorage !== "undefined" && localStorage.getItem("postIndex"))
+      ? JSON.parse(localStorage.getItem("postIndex")) : {});
 
   const takeaways = d.takeaways.map(x => "        <li>" + x + "</li>").join("\n");
 
@@ -37,15 +44,20 @@ function T(d) {
       </div>`).join("\n");
 
   const related = d.related.map(s => {
-    const r = idx[s];
+    const r = idx[s] || {};
+    const ri = ri || "photo-1606811971618-4486d14f3f99";
+    const ra = ra || "";
+    const rc = rc || "";
+    const rd = rd || "";
+    const rt = rt || s.replace(/-/g, " ");
     return `        <a class="card reveal" href="` + s + `.html">
           <div class="thumb">
-            <img src="` + U + r.i + q(700) + `" alt="` + r.a + `" loading="lazy" width="700" height="440">
-            <span class="tag">` + r.c + `</span>
+            <img src="` + U + ri + q(700) + `" alt="` + ra + `" loading="lazy" width="700" height="440">
+            <span class="tag">` + rc + `</span>
           </div>
           <div class="body">
-            <div class="date">` + r.d + `</div>
-            <h3>` + r.t + `</h3>
+            <div class="date">` + rd + `</div>
+            <h3>` + rt + `</h3>
             <div class="more">Read more <i>&rarr;</i></div>
           </div>
         </a>`;
