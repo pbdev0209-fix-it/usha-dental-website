@@ -1,0 +1,153 @@
+# Weekly blog draft.
+#
+# Every Wednesday morning this drafts the next article from content/queue.json
+# and opens a pull request. It never publishes on its own: a human reads the
+# article and merges it. Merging to main is what puts it on the live site.
+#
+# To run it right now instead of waiting: Actions tab -> Weekly blog draft ->
+# Run workflow.
+
+name: Weekly blog draft
+
+on:
+  schedule:
+    # 13:00 UTC on Wednesdays = 8am Central in summer, 7am in winter.
+    # GitHub runs cron on the default branch only, and can be late under load.
+    - cron: '0 13 * * 3'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'Who writes the prose'
+        type: choice
+        default: claude
+        options:
+          - claude
+          - scaffold
+      force:
+        description: 'Ignore the scheduled date, take the next queued topic'
+        type: boolean
+        default: false
+
+# Least privilege: enough to push a branch and open a PR, nothing more.
+permissions:
+  contents: write
+  pull-requests: write
+
+# If a run is already going, let it finish rather than racing on the queue file.
+concurrency:
+  group: weekly-blog
+  cancel-in-progress: false
+
+jobs:
+  draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # Cheap guard. A typo in a script should fail here in seconds rather
+      # than halfway through writing files.
+      - name: Syntax check the scripts
+        run: |
+          node --check scripts/lib/template.js
+          node --check scripts/update-indexes.js
+          node --check scripts/generate-post.js
+          node -e "JSON.parse(require('fs').readFileSync('content/queue.json','utf8'))" && echo 'queue.json is valid JSON'
+
+      - name: Decide how to run
+        id: plan
+        env:
+          HAS_KEY: ${{ secrets.ANTHROPIC_API_KEY != '' }}
+          MODE: ${{ inputs.mode }}
+          FORCE: ${{ inputs.force }}
+        run: |
+          FLAGS=''
+          LABEL='claude'
+          if [ "$MODE" = 'scaffold' ]; then
+            FLAGS="$FLAGS --scaffold"
+            LABEL='scaffold'
+          elif [ "$HAS_KEY" != 'true' ]; then
+            echo '::warning::No ANTHROPIC_API_KEY secret is set, so the prose cannot be written. Falling back to scaffold mode so you still get a reviewable PR.'
+            FLAGS="$FLAGS --scaffold"
+            LABEL='scaffold'
+          fi
+          if [ "$FORCE" = 'true' ]; then FLAGS="$FLAGS --force"; fi
+          echo "flags=$FLAGS" >> "$GITHUB_OUTPUT"
+          echo "label=$LABEL" >> "$GITHUB_OUTPUT"
+
+      - name: Draft the article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BLOG_MODEL: ${{ vars.BLOG_MODEL }}
+        run: node scripts/generate-post.js ${{ steps.plan.outputs.flags }}
+
+      - name: Was anything due?
+        id: due
+        run: |
+          if [ -f .agent/skip ]; then
+            echo 'Nothing was due. Ending the run without a PR.'
+            echo 'skip=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'skip=false' >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open the pull request
+        if: steps.due.outputs.skip == 'false'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODE_LABEL: ${{ steps.plan.outputs.label }}
+        run: |
+          set -euo pipefail
+          SLUG=$(cat .agent/slug)
+          TITLE=$(cat .agent/title)
+          # Move the report out of the tree so .gitignore never has to matter.
+          cp .agent/report.md "$RUNNER_TEMP/body.md"
+          rm -rf .agent
+
+          BRANCH="blog/$SLUG"
+          git config user.name 'blog-agent'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git checkout -b "$BRANCH"
+          git add -A
+          git commit -m "Draft: $TITLE"
+          git push -f -u origin "$BRANCH"
+
+          {
+            echo "Drafted automatically by the weekly blog agent (mode: $MODE_LABEL)."
+            echo
+            echo '**Nothing goes live until this PR is merged.** Read the article, then merge or comment.'
+            echo
+            cat "$RUNNER_TEMP/body.md"
+          } > "$RUNNER_TEMP/pr.md"
+
+          # Labels are created on demand so a fresh clone of this repo works.
+          gh label create blog-draft --color 1A7F8C --description 'Weekly article awaiting review' --force || true
+          if [ "$MODE_LABEL" = 'scaffold' ]; then
+            gh label create needs-writing --color D93F0B --description 'Structure only, prose not written' --force || true
+            LABELS='blog-draft,needs-writing'
+          else
+            LABELS='blog-draft'
+          fi
+
+          # If a PR for this branch somehow exists already, update it instead
+          # of failing the whole run.
+          if gh pr view "$BRANCH" >/dev/null 2>&1; then
+            gh pr edit "$BRANCH" --title "Draft: $TITLE" --body-file "$RUNNER_TEMP/pr.md"
+            echo "Updated the existing PR for $BRANCH."
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "Draft: $TITLE" \
+              --body-file "$RUNNER_TEMP/pr.md" \
+              --label "$LABELS"
+          fi
+
+          gh pr view "$BRANCH" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
