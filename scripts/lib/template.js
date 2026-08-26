@@ -45,11 +45,11 @@ function T(d) {
 
   const related = d.related.map(s => {
     const r = idx[s] || {};
-    const ri = ri || "photo-1606811971618-4486d14f3f99";
-    const ra = ra || "";
-    const rc = rc || "";
-    const rd = rd || "";
-    const rt = rt || s.replace(/-/g, " ");
+    const ri = r.i || "photo-1606811971618-4486d14f3f99";
+    const ra = r.a || "";
+    const rc = r.c || "";
+    const rd = r.d || "";
+    const rt = r.t || s.replace(/-/g, " ");
     return `        <a class="card reveal" href="` + s + `.html">
           <div class="thumb">
             <img src="` + U + ri + q(700) + `" alt="` + ra + `" loading="lazy" width="700" height="440">
