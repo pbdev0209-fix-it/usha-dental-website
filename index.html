@@ -197,12 +197,38 @@
 .field textarea{resize:vertical;min-height:100px}
 .form-msg{font-size:13.5px;color:var(--teal-dark);min-height:20px;margin-top:10px;font-weight:600}
 
-/* smile assistant chat */
-.chat-fab{position:fixed;left:22px;bottom:22px;z-index:80;display:inline-flex;align-items:center;gap:10px;
-  background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;border:0;cursor:pointer;
-  padding:13px 20px;border-radius:999px;font-family:inherit;font-size:14.5px;font-weight:700;
-  box-shadow:var(--shadow-lg);transition:.25s}
-.chat-fab:hover{transform:translateY(-3px)}
+/* smile assistant chat + walking Dr. Toothy mascot */
+.doc-walker{position:fixed;bottom:0;left:1vw;z-index:80;cursor:pointer;border:0;background:none;padding:0;
+  font-family:inherit;animation:docwalk 30s linear infinite}
+.doc-walker:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:12px}
+@keyframes docwalk{0%{left:1vw}46%{left:calc(97vw - 130px)}50%{left:calc(97vw - 130px)}96%{left:1vw}100%{left:1vw}}
+.doc-flip{animation:docflip 30s linear infinite;display:block}
+@keyframes docflip{0%,45.9%{transform:scaleX(1)}46%,95.9%{transform:scaleX(-1)}96%,100%{transform:scaleX(1)}}
+.doc-svg{display:block;filter:drop-shadow(0 8px 14px rgba(6,51,58,.3))}
+.doc-body{animation:docbob .6s ease-in-out infinite alternate;transform-origin:60px 100px}
+@keyframes docbob{from{transform:translateY(0)}to{transform:translateY(-3px)}}
+.leg{transform-origin:60px 104px}
+.leg-l{animation:docstep .6s linear infinite}
+.leg-r{animation:docstep .6s linear infinite;animation-delay:-.3s}
+@keyframes docstep{0%,100%{transform:rotate(14deg)}50%{transform:rotate(-14deg)}}
+.arm-wave{transform-origin:97px 62px;animation:docwave 2.6s ease-in-out infinite}
+@keyframes docwave{0%,55%,100%{transform:rotate(0)}65%{transform:rotate(-42deg)}75%{transform:rotate(-12deg)}85%{transform:rotate(-42deg)}}
+.doc-eyes{transform-origin:60px 56px;animation:docblink 4.5s infinite}
+@keyframes docblink{0%,93%,100%{transform:scaleY(1)}96%{transform:scaleY(.08)}}
+.doc-bubble{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translateX(-50%);
+  background:#fff;color:var(--teal-deep);font-size:12.5px;font-weight:800;white-space:nowrap;
+  padding:8px 14px;border-radius:999px;box-shadow:var(--shadow-lg);border:1.5px solid var(--mint);
+  animation:docbubble 2.2s ease-in-out infinite}
+.doc-bubble:after{content:"";position:absolute;top:100%;left:50%;margin-left:-6px;
+  border:6px solid transparent;border-top-color:#fff}
+@keyframes docbubble{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-5px)}}
+.doc-walker.paused, .doc-walker.paused .doc-flip, .doc-walker.paused .doc-body,
+.doc-walker.paused .leg-l, .doc-walker.paused .leg-r, .doc-walker.paused .arm-wave{animation-play-state:paused}
+.doc-walker.paused .doc-bubble{display:none}
+@media (prefers-reduced-motion:reduce){
+  .doc-walker,.doc-flip,.doc-body,.leg-l,.leg-r,.arm-wave,.doc-bubble,.doc-eyes{animation:none!important}
+}
+@media (max-width:640px){.doc-svg{width:74px}.doc-bubble{font-size:11.5px}}
 .chat-panel{position:fixed;left:22px;bottom:86px;z-index:81;width:min(370px,calc(100vw - 44px));
   background:#fff;border-radius:20px;box-shadow:0 24px 70px rgba(6,51,58,.35);overflow:hidden;
   display:none;flex-direction:column;max-height:min(560px,calc(100vh - 120px));border:1px solid var(--line)}
@@ -564,8 +590,40 @@
 
 <button class="back-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
-<!-- Smile Assistant: instant tips for common questions -->
-<button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel">&#129463; Ask a dental question</button>
+<!-- Smile Assistant: walking Dr. Toothy mascot opens the chat -->
+<button class="doc-walker" id="chatFab" aria-expanded="false" aria-controls="chatPanel" aria-label="Open the Smile Assistant chat">
+  <span class="doc-bubble">Hi! Ask me a dental question</span>
+  <span class="doc-flip">
+    <svg class="doc-svg" viewBox="0 0 120 150" width="96" height="120" aria-hidden="true">
+      <g class="leg leg-l">
+        <rect x="44" y="102" width="9" height="28" rx="4.5" fill="#0a565f"/>
+        <ellipse cx="47" cy="132" rx="11" ry="5.5" fill="#06333a"/>
+      </g>
+      <g class="leg leg-r">
+        <rect x="67" y="102" width="9" height="28" rx="4.5" fill="#0a565f"/>
+        <ellipse cx="72" cy="132" rx="11" ry="5.5" fill="#06333a"/>
+      </g>
+      <g class="doc-body">
+        <rect x="94" y="58" width="8" height="26" rx="4" fill="#f2c9a0" class="arm-wave"/>
+        <rect x="18" y="58" width="8" height="26" rx="4" fill="#f2c9a0"/>
+        <path d="M60 22c-9-8-23-9-32-2-9 7-11 20-7 32 3 11 6 24 8 36 1 6 4 16 12 16 7 0 8-8 9-14 1-6 2-12 10-12s9 6 10 12c1 6 2 14 9 14 8 0 11-10 12-16 2-12 5-25 8-36 4-12 2-25-7-32-9-7-23-6-32 2z" fill="#ffffff" stroke="#d9efec" stroke-width="2"/>
+        <path d="M60 22c-9-8-23-9-32-2-5 4-8 10-8 16 13 7 42 7 80 0 0-6-3-12-8-16-9-7-23-6-32 2z" fill="#e9f6f6"/>
+        <circle cx="60" cy="12" r="8" fill="#d9a441" stroke="#a87418" stroke-width="2"/>
+        <circle cx="60" cy="12" r="3" fill="#fff8e8"/>
+        <g class="doc-eyes">
+          <circle cx="47" cy="56" r="5" fill="#13252e"/>
+          <circle cx="73" cy="56" r="5" fill="#13252e"/>
+          <circle cx="48.6" cy="54.4" r="1.6" fill="#fff"/>
+          <circle cx="74.6" cy="54.4" r="1.6" fill="#fff"/>
+        </g>
+        <circle cx="38" cy="66" r="4.5" fill="#f7b8ae" opacity=".65"/>
+        <circle cx="82" cy="66" r="4.5" fill="#f7b8ae" opacity=".65"/>
+        <path d="M48 72q12 11 24 0" fill="none" stroke="#13252e" stroke-width="3" stroke-linecap="round"/>
+        <path d="M55 88h10M60 83v10" stroke="#e05c5c" stroke-width="3.4" stroke-linecap="round"/>
+      </g>
+    </svg>
+  </span>
+</button>
 <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Smile Assistant">
   <div class="chat-head">
     <span class="cavatar" aria-hidden="true">&#129463;</span>
@@ -686,17 +744,23 @@ form.addEventListener('submit', function(e){
   function openChat(){
     panel.classList.add('open');
     fab.setAttribute('aria-expanded','true');
+    fab.classList.add('paused');
     if (!started) {
       started = true;
-      addMsg('Hi! I’m the Smile Assistant. I share quick tips drawn from Dr. Bollineni’s patient articles. What’s on your mind? Pick a topic or type a question.', 'bot');
+      addMsg('Hi! I’m Dr. Toothy, the Smile Assistant. I share quick tips drawn from Dr. Bollineni’s patient articles. What’s on your mind? Pick a topic or type a question.', 'bot');
       addChips();
     }
     input.focus();
   }
+  function closeChat(){
+    panel.classList.remove('open');
+    fab.setAttribute('aria-expanded','false');
+    fab.classList.remove('paused');
+  }
   fab.addEventListener('click', function(){
-    panel.classList.contains('open') ? (panel.classList.remove('open'), fab.setAttribute('aria-expanded','false')) : openChat();
+    panel.classList.contains('open') ? closeChat() : openChat();
   });
-  closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); fab.setAttribute('aria-expanded','false'); });
+  closeBtn.addEventListener('click', closeChat);
   chatForm.addEventListener('submit', function(e){
     e.preventDefault();
     var q = input.value.trim();
