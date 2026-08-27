@@ -225,6 +225,10 @@
 .doc-walker.paused, .doc-walker.paused .doc-flip, .doc-walker.paused .doc-body,
 .doc-walker.paused .leg-l, .doc-walker.paused .leg-r, .doc-walker.paused .arm-wave{animation-play-state:paused}
 .doc-walker.paused .doc-bubble{display:none}
+.doc-walker:hover, .doc-walker:hover .doc-flip, .doc-walker:hover .leg-l, .doc-walker:hover .leg-r,
+.doc-walker:focus-visible, .doc-walker:focus-visible .doc-flip, .doc-walker:focus-visible .leg-l, .doc-walker:focus-visible .leg-r{animation-play-state:paused}
+.doc-walker:hover .doc-bubble{background:var(--gold);border-color:#a87418;color:#3a2a08}
+.doc-walker:hover .doc-bubble:after{border-top-color:var(--gold)}
 @media (prefers-reduced-motion:reduce){
   .doc-walker,.doc-flip,.doc-body,.leg-l,.leg-r,.arm-wave,.doc-bubble,.doc-eyes{animation:none!important}
 }
