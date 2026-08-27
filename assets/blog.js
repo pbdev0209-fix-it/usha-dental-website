@@ -1,5 +1,5 @@
 /* Shared behaviour for the blog index and article pages.
-   Dr. Usha Sribollineni, DDS - Comfort Dental, Overland Park KS */
+   Dr. Usha Sri Bollineni, DDS - Comfort Dental, Overland Park KS */
 (function () {
   "use strict";
 
