@@ -156,7 +156,7 @@
 .step h3{font-size:18px;margin:0 0 8px}
 .step p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.7}
 
-/* blog cards (markup emitted by scripts/update-indexes.js — keep class names) */
+/* blog cards (markup emitted by scripts/update-indexes.js - keep class names) */
 .blog-grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
 .blog-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
   box-shadow:var(--shadow);transition:transform .28s ease,box-shadow .28s ease}
@@ -197,6 +197,36 @@
 .field textarea{resize:vertical;min-height:100px}
 .form-msg{font-size:13.5px;color:var(--teal-dark);min-height:20px;margin-top:10px;font-weight:600}
 
+/* smile assistant chat */
+.chat-fab{position:fixed;left:22px;bottom:22px;z-index:80;display:inline-flex;align-items:center;gap:10px;
+  background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;border:0;cursor:pointer;
+  padding:13px 20px;border-radius:999px;font-family:inherit;font-size:14.5px;font-weight:700;
+  box-shadow:var(--shadow-lg);transition:.25s}
+.chat-fab:hover{transform:translateY(-3px)}
+.chat-panel{position:fixed;left:22px;bottom:86px;z-index:81;width:min(370px,calc(100vw - 44px));
+  background:#fff;border-radius:20px;box-shadow:0 24px 70px rgba(6,51,58,.35);overflow:hidden;
+  display:none;flex-direction:column;max-height:min(560px,calc(100vh - 120px));border:1px solid var(--line)}
+.chat-panel.open{display:flex}
+.chat-head{background:linear-gradient(135deg,var(--teal-deep),var(--teal));color:#fff;padding:16px 18px;display:flex;gap:12px;align-items:center}
+.chat-head .cavatar{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.16);display:grid;place-items:center;font-size:19px;flex:none}
+.chat-head b{display:block;font-size:15px}
+.chat-head span{display:block;font-size:11.5px;opacity:.85}
+.chat-close{margin-left:auto;background:none;border:0;color:#fff;font-size:20px;cursor:pointer;opacity:.85;padding:4px}
+.chat-body{padding:16px;overflow-y:auto;flex:1;background:var(--sand);display:flex;flex-direction:column;gap:10px}
+.msg{max-width:86%;padding:11px 14px;border-radius:16px;font-size:14px;line-height:1.6}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:6px;align-self:flex-start;box-shadow:var(--shadow)}
+.msg.user{background:var(--teal);color:#fff;border-bottom-right-radius:6px;align-self:flex-end}
+.msg.bot a{color:var(--teal-dark);font-weight:700}
+.msg .fine{display:block;margin-top:7px;font-size:11.5px;color:var(--muted)}
+.chat-chips{display:flex;flex-wrap:wrap;gap:7px;padding:2px 0}
+.chat-chip{background:#fff;border:1.5px solid var(--teal);color:var(--teal-dark);border-radius:999px;
+  padding:6px 12px;font-size:12.5px;font-weight:700;cursor:pointer;font-family:inherit;transition:.15s}
+.chat-chip:hover{background:var(--teal-light)}
+.chat-input{display:flex;gap:8px;padding:12px;border-top:1px solid var(--line);background:#fff}
+.chat-input input{flex:1;border:1.5px solid var(--line);border-radius:999px;padding:11px 15px;font-family:inherit;font-size:14px;background:var(--sand)}
+.chat-input input:focus{outline:0;border-color:var(--teal);background:#fff}
+.chat-input button{border:0;background:var(--teal);color:#fff;border-radius:999px;width:42px;height:42px;cursor:pointer;font-size:16px;flex:none}
+.chat-input button:hover{background:var(--teal-dark)}
 @media (max-width:960px){
   .hero-grid{grid-template-columns:1fr;padding:64px 0 76px;gap:40px}
   .hero-visual{min-height:320px}
@@ -236,7 +266,7 @@
     <div>
       <span class="eyebrow">Overland Park &middot; Kansas</span>
       <h1>Dentistry that feels <em>calm</em>, looks beautiful, and lasts.</h1>
-      <p class="lead">Gentle general, cosmetic and restorative care from a dentist with specialist training in prosthodontics &mdash; the art of rebuilding smiles with crowns, bridges and dentures that look like they grew there.</p>
+      <p class="lead">Gentle general, cosmetic and restorative care from a dentist with specialist training in prosthodontics: the art of rebuilding smiles with crowns, bridges and dentures that look like they grew there.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold btn-lg" href="#contact">Book a Visit</a>
         <a class="btn btn-glass btn-lg" href="blog.html">Read the Blog</a>
@@ -302,12 +332,12 @@
     <div class="about-copy reveal">
       <span class="kicker">Meet your dentist</span>
       <h2>Care that treats you like a person, not a chart</h2>
-      <p>Dr. Usha Sri Bollineni is a Kansas-licensed dentist practicing at Comfort Dental in Overland Park. Alongside her Doctor of Dental Surgery degree, she holds a Master's degree (MDS) in Prosthodontics &mdash; the dental specialty devoted to restoring and replacing teeth.</p>
-      <p>That training shows up in the details: crowns matched to the exact shade of your enamel, dentures that fit the first time, and honest conversations about what your teeth actually need &mdash; and what they don't.</p>
+      <p>Dr. Usha Sri Bollineni is a Kansas-licensed dentist practicing at Comfort Dental in Overland Park. Alongside her Doctor of Dental Surgery degree, she holds a Master's degree (MDS) in Prosthodontics, earned in India. It is the dental specialty devoted to restoring and replacing teeth.</p>
+      <p>That training shows up in the details: crowns matched to the exact shade of your enamel, dentures that fit the first time, and honest conversations about what your teeth actually need, and what they don't.</p>
       <ul class="tick-list">
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Particular expertise in crowns, bridges, dentures and implant-supported restorations</span></li>
         <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>A calm, unhurried approach for anxious patients</span></li>
-        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Plain-English explanations &mdash; see the <a href="blog.html" style="color:var(--teal-dark)">weekly blog</a> she writes for patients</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Plain-English explanations. See the <a href="blog.html" style="color:var(--teal-dark)">weekly blog</a> she writes for patients</span></li>
       </ul>
       <a class="btn btn-primary" href="#contact">Request an Appointment</a>
     </div>
@@ -323,7 +353,7 @@
       <div class="svc reveal">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-4.4 7-11V5l-7-3-7 3v6c0 6.6 7 11 7 11z"/><path d="M9 11.5l2 2 4-4.5"/></svg></span>
         <h3>General Dentistry</h3>
-        <p>Cleanings, exams, fillings and preventive care that keep small problems small &mdash; for the whole family.</p>
+        <p>Cleanings, exams, fillings and preventive care that keep small problems small, for the whole family.</p>
       </div>
       <div class="svc reveal">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.4L12 15l-1.9-4.6L5.5 9l4.6-1.4z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></span>
@@ -333,12 +363,12 @@
       <div class="svc reveal">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8l3 3 3-3 3 3 3-3 3 3 3-3v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span>
         <h3>Crowns &amp; Prosthodontics</h3>
-        <p>Crowns, bridges and dentures built to last &mdash; backed by a Master's degree in exactly this work.</p>
+        <p>Crowns, bridges and dentures built to last, backed by a Master's degree in exactly this work.</p>
       </div>
       <div class="svc reveal">
         <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 12h-4l-3 8-4-16-3 8H2"/></svg></span>
         <h3>Emergency Care</h3>
-        <p>Knocked-out tooth, cracked molar, swelling that's spreading &mdash; prompt relief when it can't wait.</p>
+        <p>Knocked-out tooth, cracked molar, swelling that's spreading: prompt relief when it can't wait.</p>
       </div>
     </div>
   </div>
@@ -348,7 +378,7 @@
   <div class="wrap center">
     <span class="kicker">New here?</span>
     <h2>Your first visit, step by step</h2>
-    <p class="sub">No surprises and no lecture &mdash; here is exactly what happens when you sit down in the chair.</p>
+    <p class="sub">No surprises and no lecture. Here is exactly what happens when you sit down in the chair.</p>
     <div class="steps" style="text-align:left">
       <div class="step reveal">
         <span class="num">1</span>
@@ -358,12 +388,12 @@
       <div class="step reveal">
         <span class="num">2</span>
         <h3>A thorough look</h3>
-        <p>A full exam of your teeth, gums and bite &mdash; with everything explained on-screen in plain English as we go.</p>
+        <p>A full exam of your teeth, gums and bite, with everything explained on-screen in plain English as we go.</p>
       </div>
       <div class="step reveal">
         <span class="num">3</span>
         <h3>A plan you own</h3>
-        <p>What's urgent, what can wait, and what's optional &mdash; prioritized honestly so you can decide with confidence.</p>
+        <p>What's urgent, what can wait, and what's optional, prioritized honestly so you can decide with confidence.</p>
       </div>
     </div>
     <p style="margin-top:36px"><a class="btn btn-ghost" href="blog/first-visit-guide.html">Read the full first-visit guide &rarr;</a></p>
@@ -374,7 +404,7 @@
   <div class="wrap center">
     <span class="kicker">From the blog</span>
     <h2>Honest answers about your teeth</h2>
-    <p class="sub">Plain-English answers to the questions patients in Overland Park ask me every week &mdash; sensitivity, gum health, whitening, children's teeth and more.</p>
+    <p class="sub">Plain-English answers to the questions patients in Overland Park ask me every week: sensitivity, gum health, whitening, children's teeth and more.</p>
     <div class="blog-grid" style="text-align:left">
     <!-- HOME_POSTS:START -->
         <a class="blog-card reveal" href="blog/tooth-sensitivity-cold.html" style="text-decoration:none;color:inherit;display:block;overflow:hidden">
@@ -428,7 +458,7 @@
     <div class="faq">
       <div class="qa">
         <button type="button" aria-expanded="false">Do you accept new patients?</button>
-        <div class="ans"><p>Yes! Dr. Bollineni and the Comfort Dental Overland Park team are welcoming new patients of all ages &mdash; no referral needed.</p></div>
+        <div class="ans"><p>Yes! Dr. Bollineni and the Comfort Dental Overland Park team are welcoming new patients of all ages, no referral needed.</p></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false">What insurance do you accept?</button>
@@ -436,15 +466,15 @@
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false">Do you offer emergency appointments?</button>
-        <div class="ans"><p>Yes &mdash; we do our best to see dental emergencies as quickly as possible. If you've knocked out a tooth, the first hour matters: <a href="blog/dental-emergency-overland-park.html">here's what to do right now</a>.</p></div>
+        <div class="ans"><p>Yes, we do our best to see dental emergencies as quickly as possible. If you've knocked out a tooth, the first hour matters: <a href="blog/dental-emergency-overland-park.html">here's what to do right now</a>.</p></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false">What should I bring to my first visit?</button>
-        <div class="ans"><p>A photo ID, your insurance card if you have one, and a list of current medications. That's it &mdash; we handle the rest.</p></div>
+        <div class="ans"><p>A photo ID, your insurance card if you have one, and a list of current medications. That's it. We handle the rest.</p></div>
       </div>
       <div class="qa">
         <button type="button" aria-expanded="false">I'm nervous about the dentist. Will that be a problem?</button>
-        <div class="ans"><p>Not at all &mdash; you're in good company. Tell us when you book, and we'll go at your pace, explain everything before it happens, and stop whenever you ask.</p></div>
+        <div class="ans"><p>Not at all. You're in good company. Tell us when you book, and we'll go at your pace, explain everything before it happens, and stop whenever you ask.</p></div>
       </div>
     </div>
   </div>
@@ -455,7 +485,7 @@
     <div class="center">
       <span class="kicker">Visit us</span>
       <h2>Come see us in Overland Park</h2>
-      <p class="sub" style="margin-left:auto;margin-right:auto">Request an appointment below, or stop by the office &mdash; we'd love to meet you.</p>
+      <p class="sub" style="margin-left:auto;margin-right:auto">Request an appointment below, or stop by the office. We would love to meet you.</p>
     </div>
     <div class="contact-grid">
       <div>
@@ -465,7 +495,7 @@
         </div>
         <div class="info-card">
           <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.13.96.36 1.9.7 2.8a2 2 0 01-.45 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0122 16.9z"/></svg></span>
-          <div><b>Phone</b><p>(913) 555-0123<br><span class="note">Placeholder number &mdash; final office line coming soon</span></p></div>
+          <div><b>Phone</b><p>(913) 555-0123<br><span class="note">Placeholder number, final office line coming soon</span></p></div>
         </div>
         <div class="info-card">
           <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
@@ -534,6 +564,21 @@
 
 <button class="back-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
+<!-- Smile Assistant: instant tips for common questions -->
+<button class="chat-fab" id="chatFab" aria-expanded="false" aria-controls="chatPanel">&#129463; Ask a dental question</button>
+<div class="chat-panel" id="chatPanel" role="dialog" aria-label="Smile Assistant">
+  <div class="chat-head">
+    <span class="cavatar" aria-hidden="true">&#129463;</span>
+    <span><b>Smile Assistant</b><span>Instant tips from Dr. Bollineni's articles</span></span>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <form class="chat-input" id="chatForm">
+    <input id="chatText" type="text" placeholder="Type a question, like: my gums bleed" aria-label="Your question">
+    <button type="submit" aria-label="Send">&#10148;</button>
+  </form>
+</div>
+
 <script>
 // footer year
 document.querySelectorAll('.js-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
@@ -569,13 +614,97 @@ window.addEventListener('scroll', function(){
 }, { passive: true });
 backTop.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-// contact form (demo — connect to email/booking service to go live)
+// contact form (demo - connect to email/booking service to go live)
 var form = document.getElementById('contactForm');
 form.addEventListener('submit', function(e){
   e.preventDefault();
   document.getElementById('formMsg').textContent = 'Thanks for reaching out! This form is a demo for now - please call the office to book until it goes live.';
   form.reset();
 });
+
+// ---------- Smile Assistant (rules-based tips, no medical advice) ----------
+(function(){
+  var KB = [
+    {k:['sensitiv','cold','ice','hurts when i drink','sharp pain cold'], t:'Sudden cold sensitivity usually has a findable cause, like receding gums, enamel wear, grinding, or a cavity. A toothpaste for sensitive teeth used daily often helps within a few weeks. If one specific tooth zings sharply or it is getting worse, it is worth an exam.', a:['Why Cold Water Suddenly Hurts Your Teeth','blog/tooth-sensitivity-cold.html']},
+    {k:['bleed','floss','gums bleed','gingivitis','gum'], t:'Gums that bleed when you floss are usually inflamed, not injured, and the fix is usually MORE gentle cleaning, not less. Keep brushing along the gumline and flossing daily; most early inflammation calms down in a week or two. Bleeding that continues beyond that deserves a checkup.', a:['Bleeding Gums: Normal or a Warning?','blog/bleeding-gums.html']},
+    {k:['whiten','white','stain','yellow','charcoal','bleach'], t:'Whitening works best on surface stains, and professional options are the most predictable. Charcoal powders mostly wear enamel without truly whitening. Crowns and fillings do not whiten, which matters for planning.', a:['Teeth Whitening: What Actually Works','blog/teeth-whitening-guide.html']},
+    {k:['kid','child','baby','toddler','first dentist','my son','my daughter'], t:'The first dental visit is recommended earlier than most parents expect, around the first tooth or first birthday. Early visits are mostly about habits and making the chair feel normal, not procedures.', a:["Your Child's First Dental Visit",'blog/kids-first-dentist-age.html']},
+    {k:['knocked','emergency','broke','broken','chip','crack','swelling','swollen','accident','trauma'], t:'For a knocked-out adult tooth, the first hour genuinely matters: handle it by the crown, keep it moist (milk works), and get seen right away. Facial swelling that is spreading should be treated as urgent. Please call the office or seek urgent care rather than waiting.', a:['Dental Emergency: What to Do in the First Hour','blog/dental-emergency-overland-park.html']},
+    {k:['grind','clench','jaw','headache','bruxism','night guard','tmj'], t:'Morning headaches, a tight jaw, or flattened tooth edges often point to night-time grinding. Many people have no idea they do it. A properly fitted night guard usually protects teeth well; the exam confirms whether grinding is the cause.', a:['Grinding and Morning Headaches','blog/teeth-grinding-headaches.html']},
+    {k:['dry mouth','dry','saliva','thirsty at night','mouth breath'], t:'Saliva is your enamel’s main overnight defence, so a chronically dry mouth speeds up decay. Common contributors are mouth-breathing, some medications, and dehydration. Water before bed helps; persistent dry mouth is worth mentioning at your visit.', a:['Waking Up With a Dry Mouth','blog/morning-dry-mouth.html']},
+    {k:['align','braces','invisalign','straight','crooked'], t:'Clear aligners and braces both straighten teeth, but they suit different problems and different levels of discipline: aligners only work while you actually wear them. Which fits you depends on your bite, so an exam is the honest starting point.', a:['Clear Aligners vs Braces','blog/clear-aligners-vs-braces.html']},
+    {k:['crown','veneer','cap','bridge','denture','implant'], t:'Crowns rebuild strength; veneers reshape appearance. They are often discussed as if interchangeable, but they solve different problems. This is Dr. Bollineni’s specialty area (MDS in Prosthodontics), so bring your questions.', a:['Crowns vs Veneers','blog/crowns-vs-veneers.html']},
+    {k:['first visit','new patient','what to expect','nervous','anxious','scared','afraid'], t:'A first visit here is talk first, exam second, and a plan you understand at the end. Nervous patients are very welcome: say so when you book, and everything goes at your pace.', a:['What to Expect at Your First Visit','blog/first-visit-guide.html']},
+    {k:['cavity','decay','hole','sweet','sugar'], t:'Cavity pain tends to get worse over time and often reacts to sweets; plain sensitivity tends to stay stable. Only an exam and X-ray can say for sure, and small cavities are far easier to fix than ones that have waited.', a:['Is It a Cavity or Just Sensitivity?','blog/cavity-or-sensitivity.html']},
+    {k:['brush','habit','prevent','floss how','fluoride','routine','tips'], t:'The habits that matter most: brush twice daily along the gumline, floss once, spit but do not rinse after brushing, go easy on frequent sugary sips, and keep your checkups. Consistency beats any gadget.', a:['5 Habits That Do More Than Anything You Buy','blog/5-tips-healthier-smile.html']},
+    {k:['insurance','cost','price','how much','pay'], t:'Costs and coverage vary a lot by plan and by tooth, so please call the office to confirm your specific insurance and get an estimate. The team will walk you through it before any treatment.', a:null},
+    {k:['hour','open','book','appointment','schedule','visit','call','phone','location','address','where'], t:'The office is at Comfort Dental in Overland Park, Kansas. Hours are Monday to Friday 8am to 5pm, and Saturday by appointment. Use the Book a Visit button above or the request form in the Contact section.', a:null},
+    {k:['pain','toothache','hurt','ache'], t:'Tooth pain is your body asking for an exam; articles cannot diagnose which cause is yours. If pain is severe, wakes you at night, or comes with swelling or fever, treat it as urgent and call the office. Milder aches still deserve a visit soon, because dental pain rarely fixes itself.', a:['Is It a Cavity or Just Sensitivity?','blog/cavity-or-sensitivity.html']}
+  ];
+  var fab = document.getElementById('chatFab'), panel = document.getElementById('chatPanel'),
+      body = document.getElementById('chatBody'), chatForm = document.getElementById('chatForm'),
+      input = document.getElementById('chatText'), closeBtn = document.getElementById('chatClose');
+  var started = false;
+  function addMsg(html, who){
+    var d = document.createElement('div');
+    d.className = 'msg ' + who;
+    d.innerHTML = html;
+    body.appendChild(d);
+    body.scrollTop = body.scrollHeight;
+  }
+  function addChips(){
+    var wrap = document.createElement('div');
+    wrap.className = 'chat-chips';
+    ['Sensitive teeth','Bleeding gums','Whitening','Kids','Emergency','First visit'].forEach(function(label){
+      var c = document.createElement('button');
+      c.type = 'button'; c.className = 'chat-chip'; c.textContent = label;
+      c.addEventListener('click', function(){ ask(label); });
+      wrap.appendChild(c);
+    });
+    body.appendChild(wrap);
+    body.scrollTop = body.scrollHeight;
+  }
+  function answer(q){
+    var lq = q.toLowerCase(), best = null, score = 0;
+    KB.forEach(function(item){
+      var s = 0;
+      item.k.forEach(function(kw){ if (lq.indexOf(kw) >= 0) s += kw.length; });
+      if (s > score) { score = s; best = item; }
+    });
+    if (!best) {
+      return 'I can share tips on sensitivity, gum health, whitening, kids’ teeth, grinding, emergencies, crowns and more; try one of the topics below, or ask in a few words. For anything specific to your mouth, an exam is the honest answer.<span class="fine">General education only, not personal medical advice.</span>';
+    }
+    var html = best.t;
+    if (best.a) html += '<br>Read more: <a href="' + best.a[1] + '">' + best.a[0] + '</a>';
+    html += '<span class="fine">General education only, not personal medical advice. In an emergency, call the office or seek urgent care.</span>';
+    return html;
+  }
+  function ask(q){
+    addMsg(q.replace(/</g,'&lt;'), 'user');
+    setTimeout(function(){ addMsg(answer(q), 'bot'); }, 350);
+  }
+  function openChat(){
+    panel.classList.add('open');
+    fab.setAttribute('aria-expanded','true');
+    if (!started) {
+      started = true;
+      addMsg('Hi! I’m the Smile Assistant. I share quick tips drawn from Dr. Bollineni’s patient articles. What’s on your mind? Pick a topic or type a question.', 'bot');
+      addChips();
+    }
+    input.focus();
+  }
+  fab.addEventListener('click', function(){
+    panel.classList.contains('open') ? (panel.classList.remove('open'), fab.setAttribute('aria-expanded','false')) : openChat();
+  });
+  closeBtn.addEventListener('click', function(){ panel.classList.remove('open'); fab.setAttribute('aria-expanded','false'); });
+  chatForm.addEventListener('submit', function(e){
+    e.preventDefault();
+    var q = input.value.trim();
+    if (!q) return;
+    input.value = '';
+    ask(q);
+  });
+})();
 </script>
 </body>
 </html>
