@@ -1,4 +1,4 @@
-// Article template for the Dr. Usha Sribollineni dental blog.
+// Article template for the Dr. Usha Sri Bollineni dental blog.
 //
 // This is the single source of truth for article layout. Both the weekly
 // agent and any manual post go through this function, so every article on
@@ -76,13 +76,13 @@ function T(d) {
     "mainEntityOfPage": { "@type": "WebPage", "@id": base + "blog/" + d.slug + ".html" },
     "author": {
       "@type": "Person",
-      "name": "Usha Sribollineni",
+      "name": "Usha Sri Bollineni",
       "honorificSuffix": "DDS",
       "jobTitle": "Dentist",
       "url": base,
       "worksFor": { "@type": "Dentist", "name": "Comfort Dental", "address": { "@type": "PostalAddress", "addressLocality": "Overland Park", "addressRegion": "KS", "addressCountry": "US" } }
     },
-    "publisher": { "@type": "Person", "name": "Dr. Usha Sribollineni, DDS" }
+    "publisher": { "@type": "Person", "name": "Dr. Usha Sri Bollineni, DDS" }
   };
 
   const faqLd = {
@@ -110,10 +110,10 @@ function T(d) {
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>` + d.title + ` | Dr. Usha Sribollineni, DDS - Overland Park, KS</title>
+<title>` + d.title + ` | Dr. Usha Sri Bollineni, DDS - Overland Park, KS</title>
 <meta name="description" content="` + d.desc + `">
 <meta name="keywords" content="` + d.keywords + `">
-<meta name="author" content="Dr. Usha Sribollineni, DDS">
+<meta name="author" content="Dr. Usha Sri Bollineni, DDS">
 <meta name="robots" content="index, follow">
 <meta name="article:published_time" content="` + d.iso + `">
 <link rel="canonical" href="` + base + `blog/` + d.slug + `.html">
@@ -123,7 +123,7 @@ function T(d) {
 <meta property="og:description" content="` + d.desc + `">
 <meta property="og:url" content="` + base + `blog/` + d.slug + `.html">
 <meta property="og:image" content="` + U + d.img + `?auto=format&amp;fit=crop&amp;w=1200&amp;q=72">
-<meta property="og:site_name" content="Dr. Usha Sribollineni, DDS">
+<meta property="og:site_name" content="Dr. Usha Sri Bollineni, DDS">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="` + d.title + `">
 <meta name="twitter:description" content="` + d.desc + `">
@@ -151,7 +151,7 @@ function T(d) {
     <a class="brand" href="../index.html">
       <span class="mark" aria-hidden="true">&#129463;</span>
       <span>
-        <b>Dr. Usha Sribollineni, DDS</b>
+        <b>Dr. Usha Sri Bollineni, DDS</b>
         <span>Comfort Dental &middot; Overland Park, KS</span>
       </span>
     </a>
@@ -181,7 +181,7 @@ function T(d) {
   <article class="wrap narrow article">
 
     <div class="meta">
-      <span class="who"><span class="av" aria-hidden="true">US</span> Dr. Usha Sribollineni, DDS</span>
+      <span class="who"><span class="av" aria-hidden="true">US</span> Dr. Usha Sri Bollineni, DDS</span>
       <span>MDS, Prosthodontics</span>
       <span>` + d.date + `</span>
       <span id="readTime">5 min read</span>
@@ -212,7 +212,7 @@ function T(d) {
     <div class="author-box">
       <div class="av" aria-hidden="true">US</div>
       <div>
-        <h4>Dr. Usha Sribollineni, DDS</h4>
+        <h4>Dr. Usha Sri Bollineni, DDS</h4>
         <p class="role">Dentist &middot; MDS in Prosthodontics &middot; Licensed in Kansas</p>
         <p>Dr. Usha practises general and restorative dentistry at Comfort Dental in Overland Park, Kansas. Her specialist training in prosthodontics focuses on rebuilding and replacing teeth, and she writes here to give patients the same plain explanations she gives in the chair.</p>
       </div>
@@ -243,7 +243,7 @@ function T(d) {
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <h5>Dr. Usha Sribollineni, DDS</h5>
+        <h5>Dr. Usha Sri Bollineni, DDS</h5>
         <p style="margin:0;color:#c8d3dd">Dentist with an MDS in Prosthodontics, licensed in Kansas and practising at Comfort Dental in Overland Park.</p>
       </div>
       <div>
@@ -276,9 +276,9 @@ function T(d) {
       </div>
     </div>
     <div class="legal">
-      <p>&copy; <span class="js-year">2026</span> Dr. Usha Sribollineni, DDS. All rights reserved.</p>
+      <p>&copy; <span class="js-year">2026</span> Dr. Usha Sri Bollineni, DDS. All rights reserved.</p>
       <p>This article is general dental education, not personal medical advice. Please see a dentist about your own symptoms. In an emergency, call your dental office or seek urgent care.</p>
-      <p>Dr. Sribollineni practises at a Comfort Dental location. This is her personal professional website and is not an official Comfort Dental corporate site.</p>
+      <p>Dr. Bollineni practises at a Comfort Dental location. This is her personal professional website and is not an official Comfort Dental corporate site.</p>
       <p>Photography courtesy of Unsplash contributors.</p>
     </div>
   </div>
