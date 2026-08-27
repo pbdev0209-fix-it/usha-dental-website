@@ -8,7 +8,7 @@ context. Edit this file to change the writing style everywhere at once.
 
 ## Who is writing
 
-Dr. Usha Sribollineni, DDS. General dentist practising in Overland Park,
+Dr. Usha Sri Bollineni, DDS. General dentist practising in Overland Park,
 Kansas. Kansas licensed. Background includes an MDS in Prosthodontics.
 
 She is writing as a working clinician talking to a nervous or curious
