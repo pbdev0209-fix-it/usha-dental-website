@@ -13,14 +13,21 @@ The agent is a drafting assistant, not a publisher.
 
 ## Two things only you can do
 
-The pipeline is built and tested, but two steps need a human because they
-involve account settings and billing.
+The pipeline is built and tested. Two steps are left to you, because they
+involve account settings and billing. Only the second one actually stops the
+agent from writing.
 
 ### 1. Let Actions open pull requests
 
-Without this the agent writes the article and pushes the branch, then fails at
-the last step with `GitHub Actions is not permitted to create or approve pull
-requests`.
+Optional. It saves you one click a week.
+
+Without it the agent still does the whole job: writes the article, runs the
+checks, rebuilds the indexes, commits, and pushes the branch. It just cannot
+open the pull request on your behalf, so the run ends green with a warning and
+a one-click link in the run summary (Actions -> pick the run -> "draft
+summary"). Nothing is lost either way, and nothing goes live either way.
+
+With it, the pull request appears on its own and you get an email about it.
 
   Settings -> Actions -> General -> Workflow permissions
   -> tick "Allow GitHub Actions to create and approve pull requests" -> Save
@@ -187,8 +194,9 @@ anywhere else in those files is fine.
 
 ## Troubleshooting
 
-**`GitHub Actions is not permitted to create or approve pull requests`**
-The setting in step 1 above is not enabled.
+**The run summary says the pull request could not be opened automatically**
+Not a failure. The setting in step 1 above is not enabled. The draft is safe on
+its branch; click the link in the run summary to open the pull request yourself.
 
 **`ANTHROPIC_API_KEY is not set`**
 Step 2 above. Note that secrets are not available to workflows triggered from
