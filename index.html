@@ -1,329 +1,581 @@
 <!DOCTYPE html>
-  <html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Usha Sribollineni, DDS | Comfort Dental Overland Park, KS</title>
-  <meta name="description" content="Dr. Usha Sribollineni, DDS provides gentle, modern general, cosmetic and restorative dentistry at Comfort Dental in Overland Park, KS. Book your appointment today.">
-  <meta name="keywords" content="dentist Overland Park, Comfort Dental, Dr Usha Sribollineni, cosmetic dentistry Kansas, prosthodontist Overland Park">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Dentist",
-    "name": "Dr. Usha Sribollineni, DDS",
-    "address": { "@type": "PostalAddress", "addressLocality": "Overland Park", "addressRegion": "KS" },
-  "telephone": "(913) 555-0123",
-      "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }]
-    }
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Usha Sribollineni, DDS | Dentist in Overland Park, KS - Comfort Dental</title>
+<meta name="description" content="Dr. Usha Sribollineni, DDS, MDS (Prosthodontics) provides gentle general, cosmetic and restorative dentistry at Comfort Dental in Overland Park, KS. New patients welcome.">
+<meta name="keywords" content="dentist Overland Park, Comfort Dental, Dr Usha Sribollineni, cosmetic dentistry Kansas, prosthodontist Overland Park, crowns, dentures, dental implants restoration">
+<meta name="author" content="Dr. Usha Sribollineni, DDS">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pbdev0209-fix-it.github.io/usha-dental-website/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dr. Usha Sribollineni, DDS | Dentist in Overland Park, KS">
+<meta property="og:description" content="Gentle general, cosmetic and restorative dentistry from a prosthodontics-trained dentist at Comfort Dental in Overland Park, Kansas.">
+<meta property="og:url" content="https://pbdev0209-fix-it.github.io/usha-dental-website/">
+<meta property="og:site_name" content="Dr. Usha Sribollineni, DDS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dr. Usha Sribollineni, DDS | Dentist in Overland Park, KS">
+<meta name="twitter:description" content="Gentle general, cosmetic and restorative dentistry in Overland Park, Kansas.">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link rel="stylesheet" href="assets/blog.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dentist",
+  "name": "Dr. Usha Sribollineni, DDS",
+  "url": "https://pbdev0209-fix-it.github.io/usha-dental-website/",
+  "address": { "@type": "PostalAddress", "addressLocality": "Overland Park", "addressRegion": "KS", "addressCountry": "US" },
+  "openingHoursSpecification": [{ "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "08:00", "closes": "17:00" }],
+  "founder": {
+    "@type": "Person",
+    "name": "Usha Sribollineni",
+    "honorificSuffix": "DDS",
+    "jobTitle": "Dentist"
+  }
+}
 </script>
-    <style>
-      :root{ --teal:#1a7f8c; --teal-dark:#12545c; --teal-light:#e6f7f8; --ink:#1f2d3d; }
-      *{ margin:0; padding:0; box-sizing:border-box; }
-  html{ scroll-behavior:smooth; }
-  body{ font-family:'Inter',Arial,sans-serif; color:var(--ink); line-height:1.6; overflow-x:hidden; }
-  h1,h2,h3,.logo{ font-family:'Poppins',sans-serif; }
-  a{ color:inherit; }
-  .reveal{ opacity:0; transform:translateY(30px); transition:opacity .7s ease, transform .7s ease; }
-  .reveal.visible{ opacity:1; transform:translateY(0); }
-  header{ position:fixed; top:0; left:0; right:0; display:flex; justify-content:space-between; align-items:center; padding:18px 8%; background:rgba(255,255,255,.9); backdrop-filter:blur(6px); z-index:1000; box-shadow:0 2px 10px rgba(0,0,0,.06); transition:padding .3s; }
-  .logo{ font-size:1.3rem; font-weight:700; color:var(--teal); }
-  nav ul{ list-style:none; display:flex; gap:26px; }
-  nav a{ text-decoration:none; font-weight:500; position:relative; padding-bottom:4px; }
-  nav a::after{ content:''; position:absolute; left:0; bottom:0; width:0; height:2px; background:var(--teal); transition:width .3s; }
-      nav a:hover::after, nav a.active::after{ width:100%; }
-  .hamburger{ display:none; flex-direction:column; gap:5px; cursor:pointer; }
-  .hamburger span{ width:26px; height:3px; background:var(--teal-dark); border-radius:2px; }
-  .hero{ min-height:100vh; display:flex; align-items:center; justify-content:space-between; gap:40px; padding:140px 8% 80px; background:linear-gradient(135deg,#e6f7f8,#f4fbfb); position:relative; overflow:hidden; }
-      .hero::before{ content:'🦷'; position:absolute; font-size:14rem; opacity:.06; right:-40px; top:-40px; transform:rotate(15deg); }
-  .hero h1{ font-size:clamp(2rem,4vw,3rem); color:var(--teal-dark); margin-bottom:18px; }
-  .hero p{ font-size:1.1rem; color:#3a4a52; max-width:480px; margin-bottom:30px; }
-      .btn{ display:inline-block; background:var(--teal); color:#fff; padding:15px 32px; border-radius:32px; text-decoration:none; font-weight:600; border:none; cursor:pointer; transition:transform .25s, background .25s, box-shadow .25s; box-shadow:0 8px 20px rgba(26,127,140,.3); }
-        .btn:hover{ background:var(--teal-dark); transform:translateY(-3px); box-shadow:0 12px 26px rgba(26,127,140,.4); }
-  .btn-outline{ background:transparent; border:2px solid #fff; margin-left:14px; }
-  .hero-img{ width:300px; height:300px; border-radius:50%; background:radial-gradient(circle at 30% 30%, #d9f2f3, #b8e6e8); display:flex; align-items:center; justify-content:center; font-size:5rem; flex-shrink:0; animation:float 4s ease-in-out infinite; box-shadow:0 20px 50px rgba(18,84,92,.2); }
-      @keyframes float{ 0%,100%{ transform:translateY(0);} 50%{ transform:translateY(-18px);} }
-  section{ padding:90px 8%; }
-  h2{ font-size:2.1rem; color:var(--teal-dark); text-align:center; margin-bottom:10px; }
-  .subtitle{ text-align:center; color:#6b7b83; margin-bottom:50px; }
-  .stats{ display:flex; justify-content:space-around; flex-wrap:wrap; background:var(--teal-dark); color:#fff; text-align:center; padding:60px 8%; }
-    .stat h3{ font-size:2.6rem; color:#fff; }
-    .stat span{ color:#a9d9db; }
-      .about{ display:flex; gap:60px; align-items:center; flex-wrap:wrap; }
-  .about-photo{ width:240px; height:240px; border-radius:20px; background:var(--teal-light); display:flex; align-items:center; justify-content:center; color:var(--teal-dark); flex-shrink:0; font-size:3.5rem; }
-  .services-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:28px; margin-top:20px; }
-  .card{ background:#fff; border:1px solid #e7eef0; border-radius:16px; padding:32px 26px; text-align:center; transition:transform .3s, box-shadow .3s; }
-    .card:hover{ transform:translateY(-10px); box-shadow:0 18px 34px rgba(18,84,92,.15); }
-  .card .icon{ font-size:2.3rem; margin-bottom:14px; }
-  .testimonials{ background:var(--teal-light); text-align:center; }
-  .t-slide{ max-width:640px; margin:0 auto; display:none; }
-  .t-slide.active{ display:block; animation:fadeSlide .6s ease; }
-  @keyframes fadeSlide{ from{ opacity:0; transform:translateX(20px);} to{ opacity:1; transform:translateX(0);} }
-  .t-slide p{ font-size:1.15rem; font-style:italic; color:#2b4249; margin-bottom:16px; }
-  .t-dots{ display:flex; justify-content:center; gap:10px; margin-top:24px; }
-  .t-dots span{ width:10px; height:10px; border-radius:50%; background:#bcd; cursor:pointer; transition:background .3s; }
-    .t-dots span.active{ background:var(--teal); }
-  .blog-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:28px; margin-top:20px; }
-  .blog-card{ background:#fff; border-radius:16px; overflow:hidden; border:1px solid #e7eef0; text-decoration:none; display:block; transition:transform .3s, box-shadow .3s; }
-      .blog-card:hover{ transform:translateY(-8px); box-shadow:0 18px 34px rgba(18,84,92,.15); }
-  .blog-card .thumb{ height:150px; background:linear-gradient(135deg,#cdeef0,#e6f7f8); display:flex; align-items:center; justify-content:center; font-size:2.4rem; }
-      .blog-card-body{ padding:20px; }
-  .blog-card-body .date{ font-size:.8rem; color:#8a9aa1; }
-  .blog-card-body h3{ margin:8px 0; color:var(--teal-dark); }
-  .faq-item{ border-bottom:1px solid #e7eef0; max-width:760px; margin:0 auto; }
-  .faq-q{ display:flex; justify-content:space-between; align-items:center; padding:20px 6px; cursor:pointer; font-weight:600; }
-  .faq-q .plus{ transition:transform .3s; font-size:1.4rem; color:var(--teal); }
-  .faq-item.open .plus{ transform:rotate(45deg); }
-  .faq-a{ max-height:0; overflow:hidden; transition:max-height .35s ease; color:#4a5a61; padding:0 6px; }
-  .faq-item.open .faq-a{ max-height:200px; padding-bottom:18px; }
-  .contact{ background:var(--teal-dark); color:#fff; }
-    .contact h2,.contact .subtitle{ color:#fff; }
-    .contact-wrap{ display:flex; gap:60px; flex-wrap:wrap; justify-content:center; }
-  .contact-info div{ margin-bottom:22px; }
-  .contact-info strong{ display:block; color:#a9e0e2; margin-bottom:4px; }
-    form{ display:flex; flex-direction:column; gap:14px; width:100%; max-width:380px; }
-  form input, form textarea{ padding:13px 16px; border-radius:10px; border:none; font-family:inherit; font-size:.95rem; }
-  form textarea{ resize:vertical; min-height:90px; }
-  .form-msg{ font-size:.9rem; color:#a9e0e2; min-height:20px; }
-    footer{ text-align:center; padding:26px; background:#0d3d43; color:#a9c6c9; font-size:.9rem; }
-    #backToTop{ position:fixed; bottom:26px; right:26px; width:46px; height:46px; border-radius:50%; background:var(--teal); color:#fff; border:none; font-size:1.2rem; cursor:pointer; opacity:0; pointer-events:none; transition:opacity .3s; z-index:999; box-shadow:0 8px 20px rgba(0,0,0,.2); }
-    #backToTop.show{ opacity:1; pointer-events:auto; }
-    @media(max-width:768px){
-    nav ul{ position:fixed; top:70px; left:0; right:0; background:#fff; flex-direction:column; padding:20px; gap:16px; transform:translateY(-150%); transition:transform .3s; box-shadow:0 10px 20px rgba(0,0,0,.08); }
-        nav ul.open{ transform:translateY(0); }
-    .hamburger{ display:flex; }
-    .hero{ flex-direction:column; text-align:center; padding-top:120px; }
-    .hero p{ margin-left:auto; margin-right:auto; }
-    .about{ flex-direction:column; text-align:center; }
+
+<style>
+/* ---------- homepage-specific, layered on assets/blog.css ---------- */
+
+/* hero */
+.home-hero{position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(1100px 520px at 88% -10%, rgba(217,164,65,.22), transparent 60%),
+    radial-gradient(900px 600px at -10% 110%, rgba(14,124,133,.55), transparent 60%),
+    linear-gradient(135deg,var(--teal-deep) 0%,#0a4a54 45%,var(--teal) 100%)}
+.home-hero:before{content:"";position:absolute;inset:0;opacity:.5;
+  background-image:radial-gradient(rgba(255,255,255,.10) 1px, transparent 1.6px);
+  background-size:26px 26px}
+.hero-grid{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);
+  gap:56px;align-items:center;padding:92px 0 104px}
+.home-hero h1{font-size:clamp(38px,5.4vw,62px);margin:0 0 18px;max-width:15ch;color:#fff}
+.home-hero h1 em{font-style:italic;color:#ffd98a}
+.home-hero .lead{font-size:18.5px;line-height:1.8;max-width:54ch;opacity:.95;margin:0 0 30px}
+.hero-ctas{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:34px}
+.btn-lg{padding:15px 30px;font-size:16px}
+.btn-gold{background:var(--gold);color:#3a2a08}
+.btn-gold:hover{background:#e6b458;transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.btn-glass{background:rgba(255,255,255,.12);color:#fff;border:1.5px solid rgba(255,255,255,.45)}
+.btn-glass:hover{background:rgba(255,255,255,.22)}
+.cred-row{display:flex;flex-wrap:wrap;gap:10px}
+.cred{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.3px;
+  background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);
+  padding:8px 14px;border-radius:999px;backdrop-filter:blur(4px)}
+.cred svg{width:15px;height:15px;flex:none}
+
+/* hero visual panel */
+.hero-visual{position:relative;display:grid;place-items:center;min-height:380px}
+.hero-orb{width:min(340px,80%);aspect-ratio:1;border-radius:38% 62% 55% 45%/45% 40% 60% 55%;
+  background:linear-gradient(145deg,rgba(255,255,255,.22),rgba(255,255,255,.05));
+  border:1px solid rgba(255,255,255,.35);box-shadow:0 30px 80px rgba(3,26,30,.45), inset 0 1px 0 rgba(255,255,255,.4);
+  display:grid;place-items:center;animation:blob 12s ease-in-out infinite}
+@keyframes blob{0%,100%{border-radius:38% 62% 55% 45%/45% 40% 60% 55%;transform:translateY(0)}
+  50%{border-radius:55% 45% 40% 60%/50% 55% 45% 50%;transform:translateY(-16px)}}
+.hero-orb svg{width:56%;height:auto;filter:drop-shadow(0 14px 30px rgba(3,26,30,.35))}
+.float-card{position:absolute;background:rgba(255,255,255,.96);color:var(--ink);border-radius:14px;
+  box-shadow:var(--shadow-lg);padding:12px 16px;font-size:13px;font-weight:700;display:flex;align-items:center;gap:10px;
+  animation:drift 7s ease-in-out infinite}
+.float-card small{display:block;font-weight:600;color:var(--muted);font-size:11.5px}
+.float-card .dot{width:34px;height:34px;flex:none;border-radius:10px;display:grid;place-items:center;color:#fff;
+  background:linear-gradient(135deg,var(--teal),var(--teal-deep))}
+.float-card.fc1{top:8%;right:2%}
+.float-card.fc2{bottom:10%;left:0;animation-delay:-3.5s}
+.float-card.fc2 .dot{background:linear-gradient(135deg,var(--gold),#a87418)}
+@keyframes drift{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+
+/* trust band */
+.trust{background:var(--teal-deep);color:#fff;padding:0}
+.trust .wrap{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));}
+.trust-item{display:flex;align-items:center;gap:14px;padding:26px 22px;border-left:1px solid rgba(255,255,255,.09)}
+.trust-item:first-child{border-left:0}
+.trust-item svg{width:30px;height:30px;flex:none;color:#7fd4d8}
+.trust-item b{display:block;font-size:15px;line-height:1.35}
+.trust-item span{font-size:12.5px;color:#9fc9cc}
+
+/* sections */
+.sect{padding:96px 0}
+.sect-alt{background:var(--sand)}
+.kicker{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase;
+  color:var(--teal);margin-bottom:12px}
+.sect h2{font-size:clamp(28px,3.4vw,40px);margin:0 0 14px}
+.sect .sub{color:var(--muted);font-size:16.5px;max-width:62ch;margin:0 0 44px}
+.center{text-align:center}
+.center .sub{margin-left:auto;margin-right:auto}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:64px;align-items:center}
+.portrait{position:relative}
+.portrait .frame{aspect-ratio:4/4.6;border-radius:26px;overflow:hidden;position:relative;
+  background:linear-gradient(160deg,var(--mint),#bfe3df 60%,#a7d8d3);box-shadow:var(--shadow-lg);
+  display:grid;place-items:center}
+.portrait .frame:before{content:"";position:absolute;inset:0;
+  background-image:radial-gradient(rgba(10,86,95,.10) 1px, transparent 1.6px);background-size:22px 22px}
+.portrait .monogram{position:relative;width:130px;height:130px;border-radius:50%;
+  background:linear-gradient(135deg,var(--teal),var(--teal-deep));color:#fff;display:grid;place-items:center;
+  font-family:var(--font-display);font-size:52px;font-weight:600;box-shadow:0 18px 44px rgba(6,51,58,.35)}
+.portrait .plate{position:absolute;left:24px;right:24px;bottom:22px;background:rgba(255,255,255,.94);
+  border-radius:14px;padding:13px 18px;box-shadow:var(--shadow);font-size:13.5px}
+.portrait .plate b{display:block;font-size:15px}
+.portrait .plate span{color:var(--muted)}
+.badge-gold{position:absolute;top:-16px;right:-14px;background:var(--gold);color:#3a2a08;
+  font-size:12px;font-weight:800;letter-spacing:.6px;padding:10px 16px;border-radius:999px;
+  box-shadow:var(--shadow-lg);transform:rotate(3deg)}
+.about-copy p{font-size:16.5px;color:#3c4d57;margin:0 0 16px}
+.tick-list{list-style:none;margin:22px 0 30px;padding:0;display:grid;gap:12px}
+.tick-list li{display:flex;gap:12px;align-items:flex-start;font-size:15.5px;font-weight:600}
+.tick-list svg{width:22px;height:22px;flex:none;color:var(--teal);margin-top:1px}
+
+/* services */
+.svc-grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 28px;
+  box-shadow:var(--shadow);transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+  position:relative;overflow:hidden}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:#bfdfe1}
+.svc:after{content:"";position:absolute;left:0;top:0;height:4px;width:0;transition:width .35s ease;
+  background:linear-gradient(90deg,var(--teal),var(--gold))}
+.svc:hover:after{width:100%}
+.svc .ico{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;
+  background:linear-gradient(135deg,var(--teal-light),var(--mint));color:var(--teal-dark)}
+.svc .ico svg{width:28px;height:28px}
+.svc h3{font-size:19px;margin:0 0 10px}
+.svc p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.7}
+
+/* first visit steps */
+.steps{display:grid;gap:26px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));counter-reset:step}
+.step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:32px 28px;box-shadow:var(--shadow);position:relative}
+.step .num{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;
+  background:var(--teal-deep);color:#ffd98a;font-family:var(--font-display);font-size:19px;font-weight:600}
+.step h3{font-size:18px;margin:0 0 8px}
+.step p{font-size:14.5px;color:var(--muted);margin:0;line-height:1.7}
+
+/* blog cards (markup emitted by scripts/update-indexes.js — keep class names) */
+.blog-grid{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+.blog-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow);transition:transform .28s ease,box-shadow .28s ease}
+.blog-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg)}
+.blog-card .thumb{aspect-ratio:16/10;background:var(--mint)}
+.blog-card .thumb img{transition:transform .5s ease}
+.blog-card:hover .thumb img{transform:scale(1.06)}
+.blog-card-body{padding:22px 22px 24px}
+.blog-card-body .date{font-size:11.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:var(--teal)}
+.blog-card-body h3{font-size:18.5px;margin:10px 0 8px;line-height:1.35}
+.blog-card-body p{font-size:14.5px;color:var(--muted);margin:0 0 14px;line-height:1.65}
+
+/* contact */
+.contact-band{position:relative;overflow:hidden;color:#fff;
+  background:
+    radial-gradient(900px 480px at 110% 0%, rgba(217,164,65,.18), transparent 55%),
+    linear-gradient(135deg,var(--teal-deep),var(--teal-dark) 60%,var(--teal))}
+.contact-band .kicker{color:#7fd4d8}
+.contact-band h2{color:#fff}
+.contact-band .sub{color:#cfe7e9}
+.contact-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.info-card{display:flex;gap:16px;align-items:flex-start;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:20px 22px;margin-bottom:16px;backdrop-filter:blur(4px)}
+.info-card .dot{width:42px;height:42px;flex:none;border-radius:12px;display:grid;place-items:center;
+  background:rgba(255,255,255,.14);color:#ffd98a}
+.info-card .dot svg{width:21px;height:21px}
+.info-card b{display:block;font-size:15.5px;margin-bottom:3px}
+.info-card p{margin:0;font-size:14.5px;color:#cfe7e9;line-height:1.6}
+.info-card .note{font-size:12px;color:#ffd98a}
+.contact-form{background:#fff;border-radius:22px;box-shadow:var(--shadow-lg);padding:34px 32px;color:var(--ink)}
+.contact-form h3{font-size:21px;margin:0 0 6px}
+.contact-form .fine{font-size:13px;color:var(--muted);margin:0 0 22px}
+.field{margin-bottom:15px}
+.field label{display:block;font-size:13px;font-weight:700;margin-bottom:6px;color:var(--teal-deep)}
+.field input,.field textarea{width:100%;padding:13px 15px;border:1.5px solid var(--line);border-radius:12px;
+  font-family:inherit;font-size:15px;color:var(--ink);background:var(--sand);transition:.2s}
+.field input:focus,.field textarea:focus{outline:0;border-color:var(--teal);background:#fff;box-shadow:0 0 0 4px rgba(14,124,133,.12)}
+.field textarea{resize:vertical;min-height:100px}
+.form-msg{font-size:13.5px;color:var(--teal-dark);min-height:20px;margin-top:10px;font-weight:600}
+
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr;padding:64px 0 76px;gap:40px}
+  .hero-visual{min-height:320px}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:44px}
+  .trust-item{border-left:0;border-top:1px solid rgba(255,255,255,.09)}
+  .trust-item:first-child{border-top:0}
+  .sect{padding:72px 0}
 }
 </style>
-  </head>
-  <body>
-  <header id="header">
-    <div class="logo">Dr. Usha Sribollineni, DDS</div>
-    <nav>
-      <ul id="navLinks">
-        <li><a href="#home" class="active">Home</a></li>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap hdr">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">&#129463;</span>
+      <span>
+        <b>Dr. Usha Sribollineni, DDS</b>
+        <span>Comfort Dental &middot; Overland Park, KS</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <ul>
+        <li><a href="#home" class="active" aria-current="page">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#blog">Blog</a></li>
+        <li><a href="blog.html">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
-    <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
-  </header>
-
-  <section class="hero" id="home">
-    <div class="reveal">
-      <h1>Gentle, Modern Dental Care in Overland Park</h1>
-      <p>Comprehensive general, cosmetic, and restorative dentistry with a focus on comfort, prevention, and beautiful, healthy smiles for the whole family.</p>
-    <a href="#contact" class="btn">Book an Appointment</a>
+    <a class="btn btn-primary" href="#contact">Book a Visit</a>
   </div>
-  <div class="hero-img reveal">&#129468;</div>
-</section>
+</header>
 
-<section class="stats">
-    <div class="stat"><h3 data-target="500">0</h3><span>Happy Patients</span></div>
-    <div class="stat"><h3 data-target="5">0</h3><span>Years Combined Experience</span></div>
-  <div class="stat"><h3 data-target="15">0</h3><span>Procedures Mastered</span></div>
-    <div class="stat"><h3 data-target="100">0</h3><span>Percent Patient-Focused Care</span></div>
-</section>
-
-<section class="about reveal" id="about">
-    <div class="about-photo">&#129657;</div>
+<section class="home-hero" id="home">
+  <div class="wrap hero-grid">
     <div>
-      <h2 style="text-align:left">Meet Dr. Usha Sribollineni</h2>
-    <p>Dr. Usha Sribollineni, DDS is a licensed dentist in Kansas practicing at Comfort Dental in Overland Park. She holds a Doctor of Dental Surgery degree along with a Master's degree (MDS) in Prosthodontics, giving her particular expertise in crowns, bridges, dentures, and implant-supported restorations. Dr. Sribollineni is passionate about restorative and cosmetic dentistry, and is committed to helping every patient feel comfortable, informed, and confident in their smile.</p>
+      <span class="eyebrow">Overland Park &middot; Kansas</span>
+      <h1>Dentistry that feels <em>calm</em>, looks beautiful, and lasts.</h1>
+      <p class="lead">Gentle general, cosmetic and restorative care from a dentist with specialist training in prosthodontics &mdash; the art of rebuilding smiles with crowns, bridges and dentures that look like they grew there.</p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold btn-lg" href="#contact">Book a Visit</a>
+        <a class="btn btn-glass btn-lg" href="blog.html">Read the Blog</a>
+      </div>
+      <div class="cred-row" aria-label="Credentials">
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2l2.9 6.3 6.6.7-4.9 4.5 1.4 6.5L12 16.7 6 20l1.4-6.5L2.5 9l6.6-.7z"/></svg> DDS &middot; Doctor of Dental Surgery</span>
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg> MDS &middot; Prosthodontics</span>
+        <span class="cred"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> Kansas Licensed</span>
+      </div>
     </div>
-  </section>
-
-  <section id="services">
-    <h2 class="reveal">Services</h2>
-    <p class="subtitle reveal">Comprehensive care for every stage of your smile</p>
-    <div class="services-grid">
-      <div class="card reveal"><div class="icon">&#129467;</div><h3>General Dentistry</h3><p>Cleanings, exams, and preventive care for the whole family.</p></div>
-      <div class="card reveal"><div class="icon">&#10024;</div><h3>Cosmetic Dentistry</h3><p>Whitening, veneers, and complete smile makeovers.</p></div>
-      <div class="card reveal"><div class="icon">&#128081;</div><h3>Crowns and Prosthodontics</h3><p>Crowns, bridges, and dentures built to last, backed by advanced training.</p></div>
-      <div class="card reveal"><div class="icon">&#128657;</div><h3>Emergency Care</h3><p>Prompt relief and treatment when you need it most.</p></div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-orb">
+        <svg viewBox="0 0 120 120" fill="none">
+          <path d="M60 14c-8-7-20-8-28-2-9 7-11 20-7 32 4 13 6 27 9 41 1 6 3 12 8 12s6-6 7-12c1-7 3-16 6-16h10c3 0 5 9 6 16 1 6 2 12 7 12s7-6 8-12c3-14 5-28 9-41 4-12 2-25-7-32-8-6-20-5-28 2z" fill="#ffffff" opacity=".96"/>
+          <path d="M60 14c-8-7-20-8-28-2-6 5-9 12-9 19 14 8 46 8 74 0 0-7-3-14-9-19-8-6-20-5-28 2z" fill="#d9efec" opacity=".9"/>
+        </svg>
+      </div>
+      <div class="float-card fc1">
+        <span class="dot"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg></span>
+        <span>New patients welcome<small>All ages, no referral needed</small></span>
+      </div>
+      <div class="float-card fc2">
+        <span class="dot"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 018-3 4.5 4.5 0 018 3c0 5.5-8 11-8 11z"/></svg></span>
+        <span>Comfort-first care<small>Nervous patients, you're safe here</small></span>
+      </div>
+    </div>
   </div>
 </section>
 
-<section class="testimonials">
-  <h2 class="reveal">What Patients Say</h2>
-  <p class="subtitle reveal">Sample feedback style shown below</p>
-  <div class="t-slide active"><p>"Dr. Sribollineni made me feel completely at ease during my visit."</p><strong>Sample Patient</strong></div>
-    <div class="t-slide"><p>"Extremely thorough and gentle. My new crown looks and feels great."</p><strong>Sample Patient</strong></div>
-    <div class="t-slide"><p>"Friendly staff, clean office, and a dentist who really listens."</p><strong>Sample Patient</strong></div>
-    <div class="t-dots">
-      <span class="active" data-i="0"></span><span data-i="1"></span><span data-i="2"></span>
+<section class="trust" aria-label="Practice highlights">
+  <div class="wrap">
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 10L12 5 2 10l10 5 10-5zM6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+      <div><b>Specialist training</b><span>MDS in Prosthodontics</span></div>
     </div>
-  </section>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 21s-8-5.5-8-11a4.5 4.5 0 018-3 4.5 4.5 0 018 3c0 5.5-8 11-8 11z"/></svg>
+      <div><b>Gentle by design</b><span>Comfort-focused visits</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M17 21v-2a4 4 0 00-4-4H7a4 4 0 00-4 4v2M14 3.1a4 4 0 010 7.8M21 21v-2a4 4 0 00-3-3.9M10 11a4 4 0 100-8 4 4 0 000 8z"/></svg>
+      <div><b>Whole-family care</b><span>Kids through grandparents</span></div>
+    </div>
+    <div class="trust-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-4.4 7-11V5l-7-3-7 3v6c0 6.6 7 11 7 11z"/></svg>
+      <div><b>Honest advice</b><span>Education before treatment</span></div>
+    </div>
+  </div>
+</section>
 
-  <section id="blog" style="background:#fbfdfd;">
-      <h2 class="reveal">From the Blog</h2>
-      <p class="subtitle reveal">Plain-English answers to the questions patients in Overland Park ask me every week &mdash; sensitivity, gum health, whitening, children's teeth and more.</p>
-      <div class="blog-grid">
-      <!-- HOME_POSTS:START -->
+<section class="sect" id="about">
+  <div class="wrap about-grid">
+    <div class="portrait reveal">
+      <div class="frame">
+        <span class="badge-gold">DDS &middot; MDS</span>
+        <span class="monogram" aria-hidden="true">US</span>
+        <div class="plate">
+          <b>Dr. Usha Sribollineni, DDS</b>
+          <span>General &amp; Restorative Dentist &middot; Comfort Dental, Overland Park</span>
+        </div>
+      </div>
+    </div>
+    <div class="about-copy reveal">
+      <span class="kicker">Meet your dentist</span>
+      <h2>Care that treats you like a person, not a chart</h2>
+      <p>Dr. Usha Sribollineni is a Kansas-licensed dentist practicing at Comfort Dental in Overland Park. Alongside her Doctor of Dental Surgery degree, she holds a Master's degree (MDS) in Prosthodontics &mdash; the dental specialty devoted to restoring and replacing teeth.</p>
+      <p>That training shows up in the details: crowns matched to the exact shade of your enamel, dentures that fit the first time, and honest conversations about what your teeth actually need &mdash; and what they don't.</p>
+      <ul class="tick-list">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Particular expertise in crowns, bridges, dentures and implant-supported restorations</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>A calm, unhurried approach for anxious patients</span></li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg> <span>Plain-English explanations &mdash; see the <a href="blog.html" style="color:var(--teal-dark)">weekly blog</a> she writes for patients</span></li>
+      </ul>
+      <a class="btn btn-primary" href="#contact">Request an Appointment</a>
+    </div>
+  </div>
+</section>
+
+<section class="sect sect-alt" id="services">
+  <div class="wrap center">
+    <span class="kicker">What we do</span>
+    <h2>Comprehensive care for every stage of your smile</h2>
+    <p class="sub">From six-month cleanings to complete smile restorations, every treatment starts with listening and ends with a plan you understand.</p>
+    <div class="svc-grid" style="text-align:left">
+      <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 22s7-4.4 7-11V5l-7-3-7 3v6c0 6.6 7 11 7 11z"/><path d="M9 11.5l2 2 4-4.5"/></svg></span>
+        <h3>General Dentistry</h3>
+        <p>Cleanings, exams, fillings and preventive care that keep small problems small &mdash; for the whole family.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 3l1.9 4.6L18.5 9l-4.6 1.4L12 15l-1.9-4.6L5.5 9l4.6-1.4z"/><path d="M19 15l.9 2.1L22 18l-2.1.9L19 21l-.9-2.1L16 18l2.1-.9z"/></svg></span>
+        <h3>Cosmetic Dentistry</h3>
+        <p>Whitening, veneers and smile makeovers designed around your face, your bite and your budget.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 8l3 3 3-3 3 3 3-3 3 3 3-3v8a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg></span>
+        <h3>Crowns &amp; Prosthodontics</h3>
+        <p>Crowns, bridges and dentures built to last &mdash; backed by a Master's degree in exactly this work.</p>
+      </div>
+      <div class="svc reveal">
+        <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 12h-4l-3 8-4-16-3 8H2"/></svg></span>
+        <h3>Emergency Care</h3>
+        <p>Knocked-out tooth, cracked molar, swelling that's spreading &mdash; prompt relief when it can't wait.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect" id="first-visit">
+  <div class="wrap center">
+    <span class="kicker">New here?</span>
+    <h2>Your first visit, step by step</h2>
+    <p class="sub">No surprises and no lecture &mdash; here is exactly what happens when you sit down in the chair.</p>
+    <div class="steps" style="text-align:left">
+      <div class="step reveal">
+        <span class="num">1</span>
+        <h3>We talk first</h3>
+        <p>Your history, your concerns, and anything that's ever made you dread the dentist. You set the pace.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">2</span>
+        <h3>A thorough look</h3>
+        <p>A full exam of your teeth, gums and bite &mdash; with everything explained on-screen in plain English as we go.</p>
+      </div>
+      <div class="step reveal">
+        <span class="num">3</span>
+        <h3>A plan you own</h3>
+        <p>What's urgent, what can wait, and what's optional &mdash; prioritized honestly so you can decide with confidence.</p>
+      </div>
+    </div>
+    <p style="margin-top:36px"><a class="btn btn-ghost" href="blog/first-visit-guide.html">Read the full first-visit guide &rarr;</a></p>
+  </div>
+</section>
+
+<section class="sect sect-alt" id="blog">
+  <div class="wrap center">
+    <span class="kicker">From the blog</span>
+    <h2>Honest answers about your teeth</h2>
+    <p class="sub">Plain-English answers to the questions patients in Overland Park ask me every week &mdash; sensitivity, gum health, whitening, children's teeth and more.</p>
+    <div class="blog-grid" style="text-align:left">
+    <!-- HOME_POSTS:START -->
         <a class="blog-card reveal" href="blog/tooth-sensitivity-cold.html" style="text-decoration:none;color:inherit;display:block;overflow:hidden">
           <div class="thumb" style="overflow:hidden;padding:0">
-            <img src="https://images.unsplash.com/photo-1534616042650-80f5c9b61f09?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Close-up of a glass of cold water" loading="lazy" width="700" height="440" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="https://images.unsplash.com/photo-1534616042650-80f5c9b61f09?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Close-up of a glass of cold water" loading="lazy" width="800" height="500" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div class="blog-card-body">
             <span class="date">Symptoms &middot; August 22, 2026</span>
             <h3>Why Cold Water Suddenly Hurts Your Teeth</h3>
-            <p>Sudden cold sensitivity almost always has a specific, findable cause. Here are the four most common ones.</p>
+            <p>A dentist in Overland Park explains why cold drinks suddenly hurt your teeth, the four most common causes of new sensitivity, what helps at...</p>
             <span style="font-weight:700;color:#12545c">Read more &rarr;</span>
           </div>
         </a>
         <a class="blog-card reveal" href="blog/bleeding-gums.html" style="text-decoration:none;color:inherit;display:block;overflow:hidden">
           <div class="thumb" style="overflow:hidden;padding:0">
-            <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Toothbrush standing in a glass on a bathroom counter" loading="lazy" width="700" height="440" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="https://images.unsplash.com/photo-1607613009820-a29f7bb81c04?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Toothbrush standing in a glass on a bathroom counter" loading="lazy" width="800" height="500" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div class="blog-card-body">
             <span class="date">Gum Health &middot; August 18, 2026</span>
             <h3>Bleeding Gums When You Floss: Normal or a Warning?</h3>
-            <p>Pink on the floss makes most people floss less. That is usually the opposite of what your gums need.</p>
+            <p>Gums that bleed when you floss are usually inflamed, not injured. A dentist in Overland Park explains what bleeding gums mean, why stopping...</p>
             <span style="font-weight:700;color:#12545c">Read more &rarr;</span>
           </div>
         </a>
         <a class="blog-card reveal" href="blog/morning-dry-mouth.html" style="text-decoration:none;color:inherit;display:block;overflow:hidden">
           <div class="thumb" style="overflow:hidden;padding:0">
-            <img src="https://images.unsplash.com/photo-1611695434369-a8f5d76ceb7b?auto=format&amp;fit=crop&amp;w=700&amp;q=70" alt="Person laughing in a blue top" loading="lazy" width="700" height="440" style="width:100%;height:100%;object-fit:cover;display:block">
+            <img src="https://images.unsplash.com/photo-1611695434369-a8f5d76ceb7b?auto=format&amp;fit=crop&amp;w=800&amp;q=70" alt="Person laughing in a blue top" loading="lazy" width="800" height="500" style="width:100%;height:100%;object-fit:cover;display:block">
           </div>
           <div class="blog-card-body">
             <span class="date">Symptoms &middot; August 12, 2026</span>
             <h3>Waking Up With a Dry Mouth? Your Teeth Are Paying For It</h3>
-            <p>Saliva is your enamel's main defence. Without it overnight, decay moves faster than you would expect.</p>
+            <p>Morning dry mouth is more than uncomfortable. A dentist in Overland Park explains why saliva protects your enamel, what causes overnight...</p>
             <span style="font-weight:700;color:#12545c">Read more &rarr;</span>
           </div>
         </a>
       <!-- HOME_POSTS:END -->
-      </div>
-      <p class="reveal" style="text-align:center;margin-top:38px">
-        <a href="blog.html" style="display:inline-block;padding:13px 26px;border-radius:999px;background:#1a7f8c;color:#fff;text-decoration:none;font-weight:700;box-shadow:0 6px 22px rgba(18,84,92,.18)">Browse all 12 articles &rarr;</a>
-      </p>
-    </section>
-
-  <section id="faq">
-    <h2 class="reveal">Frequently Asked Questions</h2>
-  <p class="subtitle reveal">Answers to common questions from our patients</p>
-  <div class="faq-item">
-    <div class="faq-q">Do you accept new patients? <span class="plus">+</span></div>
-      <div class="faq-a">Yes! Dr. Sribollineni and the Comfort Dental Overland Park team are welcoming new patients of all ages.</div>
     </div>
-    <div class="faq-item">
-      <div class="faq-q">What insurance do you accept? <span class="plus">+</span></div>
-      <div class="faq-a">Please call our office to confirm your specific insurance plan and coverage details.</div>
+    <p style="margin-top:40px">
+      <a class="btn btn-primary btn-lg" href="blog.html">Browse all 12 articles &rarr;</a>
+    </p>
   </div>
-  <div class="faq-item">
-      <div class="faq-q">Do you offer emergency appointments? <span class="plus">+</span></div>
-      <div class="faq-a">Yes, we do our best to accommodate dental emergencies as quickly as possible.</div>
-    </div>
-    <div class="faq-item">
-      <div class="faq-q">What should I bring to my first visit? <span class="plus">+</span></div>
-      <div class="faq-a">Please bring a photo ID, your insurance card if applicable, and a list of current medications.</div>
-    </div>
-  </section>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Visit Us</h2>
-    <p class="subtitle">We would love to see you in Overland Park</p>
-  <div class="contact-wrap">
-    <div class="contact-info">
-      <div><strong>Address</strong>Comfort Dental<br>Overland Park, KS</div>
-      <div><strong>Phone</strong>(913) 555-0123</div>
-        <div><strong>Hours</strong>Mon-Fri: 8am-5pm<br>Sat: By appointment</div>
+<section class="sect" id="faq">
+  <div class="wrap narrow">
+    <div class="center">
+      <span class="kicker">Good to know</span>
+      <h2>Frequently asked questions</h2>
+      <p class="sub">Answers to the questions new patients ask most often.</p>
     </div>
-    <form id="contactForm">
-      <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <input type="tel" placeholder="Phone Number">
-        <textarea placeholder="How can we help you?" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-        <div class="form-msg" id="formMsg"></div>
+    <div class="faq">
+      <div class="qa">
+        <button type="button" aria-expanded="false">Do you accept new patients?</button>
+        <div class="ans"><p>Yes! Dr. Sribollineni and the Comfort Dental Overland Park team are welcoming new patients of all ages &mdash; no referral needed.</p></div>
+      </div>
+      <div class="qa">
+        <button type="button" aria-expanded="false">What insurance do you accept?</button>
+        <div class="ans"><p>Coverage varies by plan, so please call the office to confirm your specific insurance and benefits before your visit.</p></div>
+      </div>
+      <div class="qa">
+        <button type="button" aria-expanded="false">Do you offer emergency appointments?</button>
+        <div class="ans"><p>Yes &mdash; we do our best to see dental emergencies as quickly as possible. If you've knocked out a tooth, the first hour matters: <a href="blog/dental-emergency-overland-park.html">here's what to do right now</a>.</p></div>
+      </div>
+      <div class="qa">
+        <button type="button" aria-expanded="false">What should I bring to my first visit?</button>
+        <div class="ans"><p>A photo ID, your insurance card if you have one, and a list of current medications. That's it &mdash; we handle the rest.</p></div>
+      </div>
+      <div class="qa">
+        <button type="button" aria-expanded="false">I'm nervous about the dentist. Will that be a problem?</button>
+        <div class="ans"><p>Not at all &mdash; you're in good company. Tell us when you book, and we'll go at your pace, explain everything before it happens, and stop whenever you ask.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sect contact-band" id="contact">
+  <div class="wrap">
+    <div class="center">
+      <span class="kicker">Visit us</span>
+      <h2>Come see us in Overland Park</h2>
+      <p class="sub" style="margin-left:auto;margin-right:auto">Request an appointment below, or stop by the office &mdash; we'd love to meet you.</p>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+          <div><b>Address</b><p>Comfort Dental<br>Overland Park, Kansas</p></div>
+        </div>
+        <div class="info-card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.13.96.36 1.9.7 2.8a2 2 0 01-.45 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.45c.9.34 1.84.57 2.8.7A2 2 0 0122 16.9z"/></svg></span>
+          <div><b>Phone</b><p>(913) 555-0123<br><span class="note">Placeholder number &mdash; final office line coming soon</span></p></div>
+        </div>
+        <div class="info-card">
+          <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+          <div><b>Hours</b><p>Monday &ndash; Friday: 8am &ndash; 5pm<br>Saturday: By appointment</p></div>
+        </div>
+      </div>
+      <form class="contact-form" id="contactForm">
+        <h3>Request an appointment</h3>
+        <p class="fine">Tell us a little about what you need and we'll get back to you. For emergencies, please call the office directly.</p>
+        <div class="field"><label for="cf-name">Your name</label><input id="cf-name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="cf-email">Email</label><input id="cf-email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="cf-phone">Phone (optional)</label><input id="cf-phone" type="tel" autocomplete="tel"></div>
+        <div class="field"><label for="cf-msg">How can we help?</label><textarea id="cf-msg" required></textarea></div>
+        <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Send Request</button>
+        <div class="form-msg" id="formMsg" role="status"></div>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 
-  <footer>Copyright 2026 Dr. Usha Sribollineni, DDS - Comfort Dental, Overland Park, KS</footer>
-  <button id="backToTop">&#8593;</button>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h5>Dr. Usha Sribollineni, DDS</h5>
+        <p style="margin:0;color:#c8d3dd">Dentist with an MDS in Prosthodontics, licensed in Kansas and practising at Comfort Dental in Overland Park.</p>
+      </div>
+      <div>
+        <h5>Explore</h5>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Dr. Usha</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Popular topics</h5>
+        <ul>
+          <li><a href="blog/tooth-sensitivity-cold.html">Tooth sensitivity</a></li>
+          <li><a href="blog/bleeding-gums.html">Bleeding gums</a></li>
+          <li><a href="blog/teeth-whitening-guide.html">Teeth whitening</a></li>
+          <li><a href="blog/dental-emergency-overland-park.html">Dental emergencies</a></li>
+          <li><a href="blog/kids-first-dentist-age.html">Children's teeth</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <ul>
+          <li>Comfort Dental</li>
+          <li>Overland Park, Kansas</li>
+          <li><a href="#contact">Request an appointment</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal">
+      <p>&copy; <span class="js-year">2026</span> Dr. Usha Sribollineni, DDS. All rights reserved.</p>
+      <p>This site is general dental education, not personal medical advice. Please see a dentist about your own symptoms. In an emergency, call your dental office or seek urgent care.</p>
+      <p>Dr. Sribollineni practises at a Comfort Dental location. This is her personal professional website and is not an official Comfort Dental corporate site.</p>
+      <p>Photography courtesy of Unsplash contributors.</p>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    const header = document.getElementById('header');
-  const navLinks = document.getElementById('navLinks');
-  const hamburger = document.getElementById('hamburger');
-  hamburger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+<button class="back-top" id="backToTop" aria-label="Back to top">&#8593;</button>
 
-  const sections = document.querySelectorAll('section[id]');
-  window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(sec => { if (window.scrollY >= sec.offsetTop - 120) current = sec.getAttribute('id'); });
-    document.querySelectorAll('#navLinks a').forEach(a => {
-            a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-});
-    document.getElementById('backToTop').classList.toggle('show', window.scrollY > 400);
-});
+<script>
+// footer year
+document.querySelectorAll('.js-year').forEach(function(el){ el.textContent = new Date().getFullYear(); });
 
-  const revealEls = document.querySelectorAll('.reveal');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(en => { if (en.isIntersecting) en.target.classList.add('visible'); });
-}, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  let countedOnce = false;
-  const statsSection = document.querySelector('.stats');
-  const statIo = new IntersectionObserver(entries => {
-    entries.forEach(en => {
-      if (en.isIntersecting && !countedOnce) {
-        countedOnce = true;
-        document.querySelectorAll('.stat h3').forEach(h3 => {
-          const target = parseInt(h3.getAttribute('data-target'), 10);
-          let count = 0;
-          const step = Math.max(1, Math.round(target / 60));
-          const timer = setInterval(() => {
-            count += step;
-            if (count >= target) { count = target; clearInterval(timer); }
-            h3.textContent = count + (target === 100 ? '%' : '+');
-}, 25);
-});
+// reveal on scroll
+var revealEls = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  revealEls.forEach(function(el){ io.observe(el); });
+} else {
+  revealEls.forEach(function(el){ el.classList.add('in'); });
 }
-});
-}, { threshold: 0.4 });
-  if (statsSection) statIo.observe(statsSection);
 
-  const slides = document.querySelectorAll('.t-slide');
-  const dots = document.querySelectorAll('.t-dots span');
-  let tIndex = 0;
-  function showSlide(i) {
-        slides.forEach(s => s.classList.remove('active'));
-    dots.forEach(d => d.classList.remove('active'));
-    slides[i].classList.add('active');
-    dots[i].classList.add('active');
-    tIndex = i;
-  }
-  dots.forEach(d => d.addEventListener('click', () => showSlide(parseInt(d.getAttribute('data-i'), 10))));
-  setInterval(() => showSlide((tIndex + 1) % slides.length), 5000);
-
-  document.querySelectorAll('.faq-item').forEach(item => {
-        item.querySelector('.faq-q').addEventListener('click', () => {
-          const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
-      if (!isOpen) item.classList.add('open');
-});
+// FAQ accordion
+document.querySelectorAll('.qa button').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var qa = btn.closest('.qa');
+    var isOpen = qa.classList.contains('open');
+    document.querySelectorAll('.qa').forEach(function(q){
+      q.classList.remove('open');
+      q.querySelector('button').setAttribute('aria-expanded','false');
+    });
+    if (!isOpen) { qa.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+  });
 });
 
-  document.getElementById('backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+// back to top
+var backTop = document.getElementById('backToTop');
+window.addEventListener('scroll', function(){
+  backTop.classList.toggle('show', window.scrollY > 500);
+}, { passive: true });
+backTop.addEventListener('click', function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-  const form = document.getElementById('contactForm');
-  form.addEventListener('submit', e => {
-        e.preventDefault();
-    document.getElementById('formMsg').textContent = 'Thanks for reaching out! This form is a demo - connect it to email or a booking service to go live.';
-    form.reset();
+// contact form (demo — connect to email/booking service to go live)
+var form = document.getElementById('contactForm');
+form.addEventListener('submit', function(e){
+  e.preventDefault();
+  document.getElementById('formMsg').textContent = 'Thanks for reaching out! This form is a demo for now - please call the office to book until it goes live.';
+  form.reset();
 });
 </script>
-  </body>
-  </html>
-  
+</body>
+</html>
