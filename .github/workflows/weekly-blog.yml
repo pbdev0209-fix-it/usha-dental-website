@@ -140,14 +140,37 @@ jobs:
           # of failing the whole run.
           if gh pr view "$BRANCH" >/dev/null 2>&1; then
             gh pr edit "$BRANCH" --title "Draft: $TITLE" --body-file "$RUNNER_TEMP/pr.md"
-            echo "Updated the existing PR for $BRANCH."
-          else
-            gh pr create \
+            echo "Updated the existing pull request for $BRANCH."
+          elif gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "Draft: $TITLE" \
               --body-file "$RUNNER_TEMP/pr.md" \
-              --label "$LABELS"
+              --label "$LABELS"; then
+            echo "Opened a new pull request for $BRANCH."
+          else
+            # There is almost always one cause: this repo has not been told that
+            # Actions may open pull requests. Settings -> Actions -> General ->
+            # Workflow permissions -> "Allow GitHub Actions to create and
+            # approve pull requests".
+            #
+            # The draft is already committed and pushed to its own branch, so
+            # nothing is lost. Do not fail the run over a settings checkbox.
+            # Leave a one-click link in the run summary instead.
+            COMPARE="$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/compare/main...$BRANCH?expand=1"
+            echo "::warning::Could not open the pull request automatically. The draft is waiting on branch $BRANCH."
+            {
+              echo "### Draft is ready, but the pull request could not be opened automatically"
+              echo
+              echo "The article is committed to the branch **$BRANCH**. Nothing is live."
+              echo
+              echo "Open the pull request yourself in one click:"
+              echo
+              echo "$COMPARE"
+              echo
+              echo "To let the agent do this by itself in future weeks: Settings -> Actions -> General -> Workflow permissions -> tick \"Allow GitHub Actions to create and approve pull requests\"."
+            } >> "$GITHUB_STEP_SUMMARY"
+            exit 0
           fi
 
           gh pr view "$BRANCH" --json url --jq .url >> "$GITHUB_STEP_SUMMARY"
