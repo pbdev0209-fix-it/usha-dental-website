@@ -19,7 +19,7 @@
   "queue": [
     {
       "week": 1,
-      "status": "queued",
+      "status": "published",
       "publishOn": "2026-08-26",
       "dateLabel": "August 26, 2026",
       "slug": "why-does-my-jaw-click",
@@ -28,7 +28,9 @@
       "keyword": "jaw clicking when chewing",
       "img": "photo-1606811971618-4486d14f3f99",
       "alt": "A dental examination in progress",
-      "angle": "Separate harmless clicking from clicking plus pain or locking, which needs looking at."
+      "angle": "Separate harmless clicking from clicking plus pain or locking, which needs looking at.",
+      "generatedAt": "2026-09-02T13:12:03.012Z",
+      "generatedBy": "scaffold"
     },
     {
       "week": 2,
